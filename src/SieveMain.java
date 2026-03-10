@@ -44,8 +44,9 @@ public class SieveMain {
 
         List<Integer> allPrimes = new ArrayList<>();
         for (channel c : chans) {
-            PrimeList part = (PrimeList) c.readObject();
-            allPrimes.addAll(part.getValues());
+            @SuppressWarnings("unchecked")
+            List<Integer> partPrimes = (List<Integer>) c.readObject();
+            allPrimes.addAll(partPrimes);
         }
 
         System.out.println("Primes up to " + n + ":");

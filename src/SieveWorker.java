@@ -3,19 +3,6 @@ import java.util.List;
 import java.io.Serializable;
 import parcs.*;
 
-@SuppressWarnings("serial")
-class PrimeList implements Serializable {
-    private List<Integer> values;
-
-    public PrimeList(List<Integer> values) {
-        this.values = values;
-    }
-
-    public List<Integer> getValues() {
-        return values;
-    }
-}
-
 public class SieveWorker implements AM {
     @Override
     public void run(AMInfo info) {
@@ -43,7 +30,7 @@ public class SieveWorker implements AM {
             }
         }
 
-        List<Integer> primes = new ArrayList<>();
+        ArrayList<Integer> primes = new ArrayList<>();
         for (int i = 0; i < length; i++) {
             int val = start + i;
             if (val >= 2 && isPrime[i]) {
@@ -51,7 +38,6 @@ public class SieveWorker implements AM {
             }
         }
 
-        info.parent.write(new PrimeList(primes));
+        info.parent.write((Serializable) primes);
     }
 }
-
