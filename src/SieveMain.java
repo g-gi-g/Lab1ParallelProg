@@ -7,7 +7,8 @@ import parcs.*;
 public class SieveMain {
     public static void main(String[] args) throws Exception {
         task curtask = new task();
-        curtask.addJarFile("SieveWorker.jar");
+        String workerJar = curtask.findFile("SieveWorker.jar");
+        curtask.addJarFile(workerJar != null ? workerJar : "SieveWorker.jar");
 
         String inputPath = curtask.findFile("input");
         int n;
