@@ -55,11 +55,11 @@ public class SieveMain {
         long endTime = System.nanoTime();
         double elapsedMs = (endTime - startTime) / 1_000_000.0;
 
-        System.out.println("Primes up to " + n + ":");
-        for (int p : allPrimes) {
-            System.out.print(p + " ");
-        }
-        System.out.println();
+        //System.out.println("Primes up to " + n + ":");
+        //for (int p : allPrimes) {
+        //    System.out.print(p + " ");
+        //}
+        //System.out.println();
         System.out.println("Total primes: " + allPrimes.size());
         System.out.println("Time (parallel): " + elapsedMs + " ms");
 
